@@ -1,5 +1,29 @@
 angular.module('shortly.services', [])
+.factory('Shorten', function ($http){
+  var addLink = function (url) {
+    return $http({
+        method: 'POST',
+        url: '/api/links',
+        data: url
+      })
+      .then(function (resp) {
+        return resp.data;
+      });
 
+
+
+  // $location.post('/api/links', { url:link.url }).
+  //   success(function(data, status, headers, config) {
+  //     console.log(data);
+  //   }).
+  //   error(function(data, status, headers, config) {
+  //     console.error("Failed POST links request");
+  //   });
+  }
+  return {
+    addLink: addLink
+  }
+})
 .factory('Links', function ($http) {
   // Your code here
 })
@@ -44,6 +68,7 @@ angular.module('shortly.services', [])
 
 
   return {
+
     signin: signin,
     signup: signup,
     isAuth: isAuth,
