@@ -10,8 +10,6 @@ angular.module('shortly.services', [])
         return resp.data;
       });
 
-
-
   // $location.post('/api/links', { url:link.url }).
   //   success(function(data, status, headers, config) {
   //     console.log(data);
