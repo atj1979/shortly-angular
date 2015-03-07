@@ -1,6 +1,13 @@
-<div id='container' >
-  <!-- {{ LinksController }} -->
+<div id='container' ng-controller='LinksController'>
+<!--   {{ LinksController }}
+ -->
   <ul>
-    <li ng-repeat="link in links">{{ link }}</li>
+    <li ng-repeat='link in data.links'>
+      <a href='{{link.url}}'>
+        <div>Click link : {{ link.code }}</div>
+        <div>goes to : {{ link.url }}</div>
+        <div>Visits : {{ link.visits }}</div>
+      </a>
+    </li>
   </ul>
 </div>
