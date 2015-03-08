@@ -1,6 +1,5 @@
 <div id='container' ng-controller='LinksController'>
-<!--   {{ LinksController }}
- -->
+<input type='text' ng-model='search' placeholder='filter' />
   <ul>
     <li ng-repeat="link in data.links | filter:search | orderBy:'created_at'" class='link'>
       <img src="assets/redirect_icon.png">
