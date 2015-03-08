@@ -1,5 +1,5 @@
-<div id='container' ng-controller='LinksController'>
-<input type='text' ng-model='search' placeholder='filter' />
+<div id='container'>
+  <input type='text' ng-model='search' placeholder='filter' />
   <ul>
     <li ng-repeat="link in data.links | filter:search | orderBy:'-visits'" class='link'>
       <img src="assets/redirect_icon.png">

@@ -12,7 +12,7 @@ angular.module('shortly.links', [])
         console.error("Failed GET links request");
       });
   };
-
+  console.log("links view switch woot")
   $scope.getLinks();
 
 });

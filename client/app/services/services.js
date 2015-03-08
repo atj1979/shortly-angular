@@ -7,7 +7,6 @@ angular.module('shortly.services', [])
         data: url
       })
       .then(function (resp) {
-        console.log(resp.data);
         return resp.data;
       });
   }
@@ -16,22 +15,23 @@ angular.module('shortly.services', [])
   }
 })
 .factory('Links', function ($http) {
-  var retrieveAllLinks = function (url) {
-    alert('WE ARE CALLING THE RETRIEVEALLLINKS FN')
-    return $http({
-        method: 'GET',
-        url: '/api/links',
-        data: url
-      })
-      .then(function (resp) {
-        console.log('retrieve all links ', resp.data.links)
-        return resp.data.links;
-      })
-      .error(console.log("Error"));
-  }
-  return {
-    retrieveAllLinks: retrieveAllLinks
-  }})
+  // var retrieveAllLinks = function (url) {
+  //   alert('WE ARE CALLING THE RETRIEVEALLLINKS FN')
+  //   return $http({
+  //       method: 'GET',
+  //       url: '/api/links',
+  //       data: url
+  //     })
+  //     .then(function (resp) {
+  //       console.log('retrieve all links ', resp.data.links)
+  //       return resp.data.links;
+  //     })
+  //     .error(console.log("Error"));
+  // }
+  // return {
+  //   retrieveAllLinks: retrieveAllLinks
+  // }
+})
 .factory('Auth', function ($http, $location, $window) {
   // Don't touch this Auth service!!!
   // it is responsible for authenticating our user
