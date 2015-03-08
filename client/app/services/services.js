@@ -7,24 +7,31 @@ angular.module('shortly.services', [])
         data: url
       })
       .then(function (resp) {
+        console.log(resp.data);
         return resp.data;
       });
-
-  // $location.post('/api/links', { url:link.url }).
-  //   success(function(data, status, headers, config) {
-  //     console.log(data);
-  //   }).
-  //   error(function(data, status, headers, config) {
-  //     console.error("Failed POST links request");
-  //   });
   }
   return {
     addLink: addLink
   }
 })
 .factory('Links', function ($http) {
-  // Your code here
-})
+  var retrieveAllLinks = function (url) {
+    alert('WE ARE CALLING THE RETRIEVEALLLINKS FN')
+    return $http({
+        method: 'GET',
+        url: '/api/links',
+        data: url
+      })
+      .then(function (resp) {
+        console.log('retrieve all links ', resp.data.links)
+        return resp.data.links;
+      })
+      .error(console.log("Error"));
+  }
+  return {
+    retrieveAllLinks: retrieveAllLinks
+  }})
 .factory('Auth', function ($http, $location, $window) {
   // Don't touch this Auth service!!!
   // it is responsible for authenticating our user
